@@ -1,15 +1,16 @@
 import React from "react";
+import Header from "./components/Header";
 
-function App() {
+const App = function() {
   return (
     <div className="App">
-      <header className="header">...</header>
+      <Header />
 
       <div className="sidebar">...</div>
 
       <main className="main">...</main>
     </div>
   );
-}
+};
 
 export default App;
