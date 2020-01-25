@@ -1,12 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
+import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <header className="header">
-        ...
-      </header>
+      <header className="header">...</header>
+
+      <div className="sidebar">...</div>
+
+      <main className="main">...</main>
     </div>
   );
 }
