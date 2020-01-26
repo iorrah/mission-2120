@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import consumersRaw from "./api/consumers.js";
@@ -10,12 +11,27 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      consumers: consumersRaw
+      consumers: consumersRaw,
+      modalOpen: false,
+      currentConsumer: {}
     };
+
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
   }
 
-  handleClick(concsumer) {
-    // Open modal with consumer details
+  handleOpenModal(consumer) {
+    this.setState({
+      modalOpen: true,
+      currentConsumer: consumer
+    });
+  }
+
+  handleCloseModal() {
+    this.setState({
+      modalOpen: false,
+      currentConsumer: {}
+    });
   }
 
   handleClickCheckbox(e) {
@@ -24,7 +40,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { consumers } = this.state;
+    const { consumers, modalOpen, currentConsumer } = this.state;
 
     return (
       <div className="App">
@@ -91,7 +107,7 @@ class App extends React.Component {
                     <tr
                       className="main__table-row"
                       key={`consumer-${consumer.id}`}
-                      onClick={() => this.handleClick(consumer)}
+                      onClick={() => this.handleOpenModal(consumer)}
                     >
                       <td>
                         <input
@@ -129,6 +145,30 @@ class App extends React.Component {
               </table>
             </div>
           </div>
+
+          <Modal show={modalOpen} onHide={this.handleCloseModal}>
+            <Modal.Header closeButton>
+              {currentConsumer.name && (
+                <Modal.Title>{currentConsumer.name}</Modal.Title>
+              )}
+            </Modal.Header>
+
+            {currentConsumer.budget && (
+              <Modal.Body>
+                Total budget: €{currency(currentConsumer.budget)}
+              </Modal.Body>
+            )}
+
+            <Modal.Footer>
+              <Button variant="light" onClick={this.handleCloseModal}>
+                Close
+              </Button>
+
+              <Button variant="primary" onClick={this.handleCloseModal}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </main>
       </div>
     );
