@@ -3,6 +3,16 @@
   position: relative;
 }
 
+.main {
+  display: flex;
+  align-items: stretch;
+}
+
+.main__container {
+  flex-grow: 9;
+  padding: 2rem 0 0;
+}
+
 .main__delimiter {
   width: 1024px;
   margin: 0 auto;

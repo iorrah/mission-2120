@@ -1,0 +1,11 @@
+.sidebar {
+  flex-grow: 1;
+  position: relative;
+}
+
+.sidebar__content {
+  background-color: $white;
+  width: 3.8rem;
+  overflow: hidden;
+  height: 100%;
+}

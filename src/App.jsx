@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 
 const App = function() {
   return (
@@ -7,7 +8,7 @@ const App = function() {
       <Header />
 
       <main className="main">
-        <aside className="sidebar">...</aside>
+        <Sidebar />
 
         <div className="main__container">
           <div className="main__delimiter">
