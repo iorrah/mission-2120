@@ -45,16 +45,22 @@ const App = function() {
             <table className="main__table">
               <thead>
                 <tr className="main__table-header-row">
-                  <th>
+                  <th className="main__table-header-checkbox">
                     <input type="checkbox" className="main__checkbox" />
                   </th>
 
-                  <th>ID</th>
-                  <th>COMPANY</th>
-                  <th>NAME</th>
-                  <th>BUDGET €</th>
-                  <th>BUDGET SPENT €</th>
-                  <th>DATE OF FIRST PURCHASE</th>
+                  <th className="main__table-header-id">ID</th>
+                  <th className="main__table-header-logo">COMPANY</th>
+                  <th className="main__table-header-name">NAME</th>
+                  <th className="main__table-header-budget">BUDGET €</th>
+
+                  <th className="main__table-header-budget-spent">
+                    BUDGET SPENT €
+                  </th>
+
+                  <th className="main__table-header-date">
+                    DATE OF FIRST PURCHASE
+                  </th>
                   <th>&nbsp;</th>
                 </tr>
               </thead>

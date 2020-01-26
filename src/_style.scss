@@ -20,7 +20,7 @@
 .main__header {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
 }
 
 .main__title {
@@ -63,6 +63,34 @@
   color: gray;
 }
 
+.main__table-header-checkbox {
+  width: 5%;
+}
+
+.main__table-header-id {
+  width: 10%;
+}
+
+.main__table-header-logo {
+  width: 10%;
+}
+
+.main__table-header-name {
+  width: 18%;
+}
+
+.main__table-header-budget {
+  width: 15%;
+}
+
+.main__table-header-budget-spent {
+  width: 17%;
+}
+
+.main__table-header-date {
+  width: 20%;
+}
+
 .main__checkbox {
   font-size: 1.3rem;
 }
@@ -82,6 +110,6 @@
 }
 
 .main__row-action {
-  width: 1.6rem;
+  width: 1rem;
   float: right;
 }
