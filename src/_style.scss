@@ -1,6 +1,5 @@
 .App {
   display: block;
-  position: relative;
 }
 
 .main {
@@ -10,7 +9,7 @@
 
 .main__container {
   flex-grow: 9;
-  padding: 2rem 0 0;
+  padding: 2rem;
 }
 
 .main__delimiter {

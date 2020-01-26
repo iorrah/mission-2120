@@ -1,14 +1,16 @@
 .header {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.2rem 0.5rem 0.8rem;
   background-color: $white;
   display: flex;
   justify-content: space-between;
   height: 3rem;
   overflow: hidden;
+  z-index: 1;
+  position: relative;
 
   .header__logo-container {
     display: inline-block;
-    width: 2rem;
+    width: 1.8rem;
     margin: 0 2rem 0 0;
   }
 
@@ -21,7 +23,7 @@
     display: inline-block;
     width: 30rem;
     position: relative;
-    top: -0.75rem;
+    top: -0.55rem;
   }
 
   .header__search-icon {
@@ -44,13 +46,15 @@
 
   .header__bell-container {
     display: inline-block;
-    width: 2rem;
+    width: 1.7rem;
     margin: 0 2rem 0 0;
   }
 
   .header__bell {
     display: block;
     width: 100%;
+    position: relative;
+    top: -0.1rem;
   }
 
   .header__avatar-container {

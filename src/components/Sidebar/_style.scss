@@ -1,11 +1,28 @@
 .sidebar {
   flex-grow: 1;
-  position: relative;
+}
+
+.sidebar__skeleton {
+  background-color: $white;
+  position: absolute;
+  width: 3.4rem;
+  height: 100%;
+  top: 0;
+  z-index: 0;
 }
 
 .sidebar__content {
-  background-color: $white;
-  width: 3.8rem;
+  width: 3.4rem;
   overflow: hidden;
   height: 100%;
+  padding: 1.4rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+.sidebar__icon {
+  width: 1.7rem;
+  display: block;
+  margin: 0 auto 1.9rem;
+  cursor: pointer;
 }
