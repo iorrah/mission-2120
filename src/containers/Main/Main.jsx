@@ -3,9 +3,9 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
 import { toast } from "react-toastify";
 
+import CleaveBudget from "../../components/CleaveBudget";
 import consumersRaw from "../../api/consumers.js";
 import { date, currency, sortObjectArray } from "../../utils/formatter.js";
 
@@ -16,9 +16,7 @@ class Main extends React.Component {
     this.state = {
       consumers: consumersRaw,
       modalOpen: false,
-      currentConsumer: {}
-      modalOpen: true,
-      currentConsumer: consumersRaw[0],
+      currentConsumer: {},
       modalErrorMessage: ""
     };
 
@@ -254,12 +252,11 @@ class Main extends React.Component {
                       <InputGroup.Text id="basic-addon1">€</InputGroup.Text>
                     </InputGroup.Prepend>
 
-                    <FormControl
+                    <CleaveBudget
                       placeholder="e.g. 528 489,31"
-                      aria-label="Budget"
-                      aria-describedby="basic-addon1"
-                      value={currency(currentConsumer.budget)}
+                      value={currentConsumer.budget}
                       onChange={this.handleInputChange}
+                      className="form-control"
                     />
                   </InputGroup>
                 </div>
