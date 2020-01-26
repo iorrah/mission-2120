@@ -2,7 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
-import consumers from "./utils/api.js";
+import consumers from "./api/consumers.js";
 
 const App = function() {
   return (
