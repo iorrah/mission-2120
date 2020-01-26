@@ -1,4 +1,66 @@
 .header {
-  padding: 1rem 2rem;
-  background-color: $iceberg;
+  padding: 0.5rem 1rem;
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  height: 3rem;
+  overflow: hidden;
+
+  .header__logo-container {
+    display: inline-block;
+    width: 2rem;
+    margin: 0 2rem 0 0;
+  }
+
+  .header__logo {
+    display: block;
+    width: 100%;
+  }
+
+  .header__search-container {
+    display: inline-block;
+    width: 30rem;
+    position: relative;
+    top: -0.75rem;
+  }
+
+  .header__search-icon {
+    position: absolute;
+    width: 1rem;
+    top: 0.65rem;
+  }
+
+  .header__input {
+    border: 0;
+    display: block;
+    width: 100%;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.5rem 0.5rem 1.7rem;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .header__bell-container {
+    display: inline-block;
+    width: 2rem;
+    margin: 0 2rem 0 0;
+  }
+
+  .header__bell {
+    display: block;
+    width: 100%;
+  }
+
+  .header__avatar-container {
+    display: inline-block;
+    width: 2rem;
+  }
+
+  .header__avatar {
+    display: block;
+    width: 100%;
+    border-radius: 100%;
+  }
 }
