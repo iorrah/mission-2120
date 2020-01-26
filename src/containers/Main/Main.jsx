@@ -17,12 +17,17 @@ class Main extends React.Component {
       consumers: consumersRaw,
       modalOpen: false,
       currentConsumer: {}
+      modalOpen: true,
+      currentConsumer: consumersRaw[0],
+      modalErrorMessage: ""
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSaveChanges = this.handleSaveChanges.bind(this);
+    this.updateConsumerBudget = this.updateConsumerBudget.bind(this);
+    this.setModalErrorMessage = this.setModalErrorMessage.bind(this);
   }
 
   handleOpenModal(consumer) {
@@ -35,7 +40,8 @@ class Main extends React.Component {
   handleCloseModal() {
     this.setState({
       modalOpen: false,
-      currentConsumer: {}
+      currentConsumer: {},
+      modalErrorMessage: ""
     });
   }
 
@@ -48,16 +54,39 @@ class Main extends React.Component {
   }
 
   handleSaveChanges() {
-    const { consumers, currentConsumer } = this.state;
-    const updatedConsumers = consumers.filter(i => i.id !== currentConsumer.id);
+    const { currentConsumer: consumer } = this.state;
+
+    if (consumer && consumer.budget && !isNaN(consumer.budget)) {
+      if (consumer.budget >= consumer.budget_spent) {
+        this.setModalErrorMessage("");
+        this.updateConsumerBudget(consumer);
+      } else {
+        this.setModalErrorMessage(
+          `Ops... the budget must be higher than the spent budget (€${currency(
+            consumer.budget_spent
+          )})`
+        );
+      }
+    } else {
+      this.setModalErrorMessage("Ops... the budget must be a valid number");
+    }
+  }
+
+  updateConsumerBudget(consumer) {
+    const { consumers } = this.state;
+    const untouchedConsumers = consumers.filter(i => i.id !== consumer.id);
 
     this.setState({
       modalOpen: false,
-      currentConsumer: {},
-      consumers: sortObjectArray([...updatedConsumers, currentConsumer])
+      consumer: {},
+      consumers: sortObjectArray([...untouchedConsumers, consumer])
     });
 
     this.handleSuccess();
+  }
+
+  setModalErrorMessage(message) {
+    this.setState({ modalErrorMessage: message });
   }
 
   handleClickCheckbox(e) {
@@ -66,12 +95,16 @@ class Main extends React.Component {
   }
 
   handleSuccess() {
-    // Provide feedbacks
     toast.success("Budged updated successfully");
   }
 
   render() {
-    const { consumers, modalOpen, currentConsumer } = this.state;
+    const {
+      consumers,
+      modalOpen,
+      currentConsumer,
+      modalErrorMessage
+    } = this.state;
 
     return (
       <div className="main__container">
@@ -187,10 +220,15 @@ class Main extends React.Component {
 
           {currentConsumer.budget !== undefined && (
             <Modal.Body>
+              {modalErrorMessage && (
+                <p className="modal__error-message">{modalErrorMessage}</p>
+              )}
+
               <div className="row modal__body">
                 <div className="col-6">
                   <p className="modal__label">Total budget:</p>
                 </div>
+
                 <div className="col-6">
                   <InputGroup className="mb-3">
                     <InputGroup.Prepend>
