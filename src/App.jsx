@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 
@@ -19,8 +20,23 @@ const App = function() {
               </h1>
 
               <div className="main__actions">
-                <button>Filter</button>
-                <button>Add Consumer</button>
+                <Button variant="light" className="main__button-light">
+                  Filter
+                  <img
+                    src="img/icon-14.png"
+                    className="main__filter-icon"
+                    alt="Filter"
+                  />
+                </Button>
+
+                <Button variant="primary" className="main__button-primary">
+                  Add Consumer
+                  <img
+                    src="img/icon-13.png"
+                    className="main__plus-icon"
+                    alt="Add"
+                  />
+                </Button>
               </div>
             </div>
 
