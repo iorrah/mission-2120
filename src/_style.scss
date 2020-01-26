@@ -114,3 +114,33 @@
   width: 1rem;
   float: right;
 }
+
+.modal-content {
+  border: 0;
+  border-radius: 7px;
+  box-shadow: 0 0 20px 40px #0000000d;
+
+  .close {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+.modal-header {
+  padding-top: 2rem;
+}
+
+.modal-header,
+.modal-footer {
+  border-color: $iceberg;
+}
+
+.modal__body {
+  padding: 1rem 0 0.5rem;
+}
+
+.modal__label {
+  margin: 7px 0 0;
+  text-align: right;
+}
+

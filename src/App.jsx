@@ -180,21 +180,26 @@ class App extends React.Component {
 
             {currentConsumer.budget !== undefined && (
               <Modal.Body>
-                <p>Total budget:</p>
+                <div className="row modal__body">
+                  <div className="col-6">
+                    <p className="modal__label">Total budget:</p>
+                  </div>
+                  <div className="col-6">
+                    <InputGroup className="mb-3">
+                      <InputGroup.Prepend>
+                        <InputGroup.Text id="basic-addon1">€</InputGroup.Text>
+                      </InputGroup.Prepend>
 
-                <InputGroup className="mb-3">
-                  <InputGroup.Prepend>
-                    <InputGroup.Text id="basic-addon1">€</InputGroup.Text>
-                  </InputGroup.Prepend>
-
-                  <FormControl
-                    placeholder="e.g. 528 489,31"
-                    aria-label="Budget"
-                    aria-describedby="basic-addon1"
-                    value={currency(currentConsumer.budget)}
-                    onChange={this.handleInputChange}
-                  />
-                </InputGroup>
+                      <FormControl
+                        placeholder="e.g. 528 489,31"
+                        aria-label="Budget"
+                        aria-describedby="basic-addon1"
+                        value={currency(currentConsumer.budget)}
+                        onChange={this.handleInputChange}
+                      />
+                    </InputGroup>
+                  </div>
+                </div>
               </Modal.Body>
             )}
 
