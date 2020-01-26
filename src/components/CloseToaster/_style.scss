@@ -1,0 +1,20 @@
+.Toastify__toast.Toastify__toast--success {
+  background-color: #2ec169;
+  padding: 1rem;
+  font-size: 0.8rem;
+  font-family: $font;
+  font-weight: 500;
+  border-radius: 3px;
+}
+
+.Toastify__toast-close-icon {
+  font-family: system-ui;
+  font-style: normal;
+  font-size: 1rem;
+  position: relative;
+  top: -0.5rem;
+}
+
+.Toastify__progress-bar {
+  display: none;
+}
