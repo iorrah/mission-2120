@@ -14,6 +14,15 @@ class App extends React.Component {
     };
   }
 
+  handleClick(concsumer) {
+    // Open modal with consumer details
+  }
+
+  handleClickCheckbox(e) {
+    e.preventDefault();
+    return false;
+  }
+
   render() {
     const { consumers } = this.state;
 
@@ -72,6 +81,7 @@ class App extends React.Component {
                     <th className="main__table-header-date">
                       DATE OF FIRST PURCHASE
                     </th>
+
                     <th>&nbsp;</th>
                   </tr>
                 </thead>
@@ -81,9 +91,14 @@ class App extends React.Component {
                     <tr
                       className="main__table-row"
                       key={`consumer-${consumer.id}`}
+                      onClick={() => this.handleClick(consumer)}
                     >
                       <td>
-                        <input type="checkbox" className="main__checkbox" />
+                        <input
+                          type="checkbox"
+                          className="main__checkbox"
+                          onClick={this.handleClickCheckbox}
+                        />
                       </td>
 
                       <td>{consumer.id}</td>
