@@ -1,6 +1,10 @@
 import React from "react";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import consumersRaw from "./api/consumers.js";
@@ -18,6 +22,8 @@ class App extends React.Component {
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSaveChanges = this.handleSaveChanges.bind(this);
   }
 
   handleOpenModal(consumer) {
@@ -31,6 +37,25 @@ class App extends React.Component {
     this.setState({
       modalOpen: false,
       currentConsumer: {}
+    });
+  }
+
+  handleInputChange(event) {
+    const budget = event.target.value;
+
+    this.setState({
+      currentConsumer: { ...this.state.currentConsumer, budget }
+    });
+  }
+
+  handleSaveChanges() {
+    const { consumers, currentConsumer } = this.state;
+    const updatedConsumers = consumers.filter(i => i.id !== currentConsumer.id);
+
+    this.setState({
+      modalOpen: false,
+      currentConsumer: {},
+      consumers: [...updatedConsumers, currentConsumer]
     });
   }
 
@@ -146,16 +171,30 @@ class App extends React.Component {
             </div>
           </div>
 
-          <Modal show={modalOpen} onHide={this.handleCloseModal}>
+          <Modal show={modalOpen} onHide={this.handleCloseModal} centered>
             <Modal.Header closeButton>
-              {currentConsumer.name && (
+              {currentConsumer.name !== undefined && (
                 <Modal.Title>{currentConsumer.name}</Modal.Title>
               )}
             </Modal.Header>
 
-            {currentConsumer.budget && (
+            {currentConsumer.budget !== undefined && (
               <Modal.Body>
-                Total budget: €{currency(currentConsumer.budget)}
+                <p>Total budget:</p>
+
+                <InputGroup className="mb-3">
+                  <InputGroup.Prepend>
+                    <InputGroup.Text id="basic-addon1">€</InputGroup.Text>
+                  </InputGroup.Prepend>
+
+                  <FormControl
+                    placeholder="e.g. 528 489,31"
+                    aria-label="Budget"
+                    aria-describedby="basic-addon1"
+                    value={currency(currentConsumer.budget)}
+                    onChange={this.handleInputChange}
+                  />
+                </InputGroup>
               </Modal.Body>
             )}
 
@@ -164,7 +203,7 @@ class App extends React.Component {
                 Close
               </Button>
 
-              <Button variant="primary" onClick={this.handleCloseModal}>
+              <Button variant="primary" onClick={this.handleSaveChanges}>
                 Save Changes
               </Button>
             </Modal.Footer>
