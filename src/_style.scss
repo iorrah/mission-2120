@@ -1,0 +1,50 @@
+.App {
+  display: block;
+  position: relative;
+}
+
+.main__delimiter {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.main__header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem;
+}
+
+.main__table {
+  width: 100%;
+}
+
+.main__table-body {
+  background-color: $white;
+}
+
+.main__table-header-row > th {
+  padding: 0.7rem 0.7rem;
+  font-weight: normal;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.main__checkbox {
+  font-size: 1.3rem;
+}
+
+.main__table-row {
+  cursor: pointer;
+}
+
+.main__table-row > td {
+  padding: 0.3rem 0.7rem;
+}
+
+.main__row-logo {
+  width: 2.3rem;
+}
+
+.main__row-action {
+  width: 1.6rem;
+}
