@@ -19,4 +19,11 @@ const date = date => {
   return `${pad(day)}/${pad(month)}/${year}`;
 };
 
-export { date };
+const currency = number => {
+  return number
+    .toLocaleString("de")
+    .split(".")
+    .join(" ");
+};
+
+export { pad, date, currency };
