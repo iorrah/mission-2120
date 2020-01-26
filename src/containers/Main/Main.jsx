@@ -56,20 +56,39 @@ class Main extends React.Component {
   handleSaveChanges() {
     const { currentConsumer: consumer } = this.state;
 
-    if (consumer && consumer.budget && !isNaN(consumer.budget)) {
-      if (consumer.budget >= consumer.budget_spent) {
-        this.setModalErrorMessage("");
-        this.updateConsumerBudget(consumer);
-      } else {
-        this.setModalErrorMessage(
-          `Ops... the budget must be higher than the spent budget (€${currency(
-            consumer.budget_spent
-          )})`
-        );
-      }
+    if (this.isSameBudget(consumer)) {
+      this.handleCloseModal();
     } else {
-      this.setModalErrorMessage("Ops... the budget must be a valid number");
+      if (this.isValidBudget(consumer)) {
+        if (this.isMoreThanSpent(consumer)) {
+          this.setModalErrorMessage("");
+          this.updateConsumerBudget(consumer);
+        } else {
+          this.setModalErrorMessage(
+            `Ops... the budget must be higher than the spent budget (€${currency(
+              consumer.budget_spent
+            )})`
+          );
+        }
+      } else {
+        this.setModalErrorMessage("Ops... the budget must be a valid number");
+      }
     }
+  }
+
+  isSameBudget(consumer) {
+    const { consumers } = this.state;
+    const untouchedConsumer = consumers.find(i => i.id === consumer.id);
+    return consumer.budget === untouchedConsumer.budget;
+  }
+
+  isValidBudget(consumer) {
+    debugger;
+    return consumer && consumer.budget && !isNaN(consumer.budget);
+  }
+
+  isMoreThanSpent(consumer) {
+    return consumer.budget >= consumer.budget_spent;
   }
 
   updateConsumerBudget(consumer) {
