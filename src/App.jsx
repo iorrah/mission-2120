@@ -2,6 +2,7 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
+import consumers from "./utils/api.js";
 
 const App = function() {
   return (
@@ -16,7 +17,7 @@ const App = function() {
             <div className="main__header">
               <h1 className="main__title">
                 Consumers
-                <small className="main__counter">(13)</small>
+                <small className="main__counter">({consumers.length})</small>
               </h1>
 
               <div className="main__actions">
@@ -58,34 +59,31 @@ const App = function() {
               </thead>
 
               <tbody className="main__table-body">
-                <tr className="main__table-row">
-                  <td>
-                    <input type="checkbox" className="main__checkbox" />
-                  </td>
+                {consumers.map(consumer => (
+                  <tr
+                    className="main__table-row"
+                    key={`consumer-${consumer.id}`}
+                  >
+                    <td>
+                      <input type="checkbox" className="main__checkbox" />
+                    </td>
 
-                  <td>#1</td>
+                    <td>{consumer.id}</td>
+                    <td>Company Logo</td>
+                    <td>{consumer.name}</td>
+                    <td>{consumer.budget}</td>
+                    <td>{consumer.budget_spent}</td>
+                    <td>{consumer.date_of_first_purchase}</td>
 
-                  <td>
-                    <img
-                      src="img/logo-1.png"
-                      className="main__row-logo"
-                      alt="Company Logo"
-                    />
-                  </td>
-
-                  <td>NBC</td>
-                  <td>123 123 123,99</td>
-                  <td>123,99</td>
-                  <td>3 March 2120</td>
-
-                  <td>
-                    <img
-                      src="img/icon-8.png"
-                      className="main__row-action"
-                      alt="Further actions"
-                    />
-                  </td>
-                </tr>
+                    <td>
+                      <img
+                        src="img/icon-8.png"
+                        className="main__row-action"
+                        alt="Further actions"
+                      />
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
