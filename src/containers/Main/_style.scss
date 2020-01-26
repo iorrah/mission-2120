@@ -126,6 +126,13 @@
   padding-top: 2rem;
 }
 
+.modal__logo {
+  width: 2.3rem;
+  margin: 0 0.5rem 0 0;
+  position: relative;
+  top: -0.2rem;
+}
+
 .modal-header,
 .modal-footer {
   border-color: $iceberg;

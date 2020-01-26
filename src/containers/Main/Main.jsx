@@ -173,7 +173,15 @@ class Main extends React.Component {
         <Modal show={modalOpen} onHide={this.handleCloseModal} centered>
           <Modal.Header closeButton>
             {currentConsumer.name !== undefined && (
-              <Modal.Title>{currentConsumer.name}</Modal.Title>
+              <Modal.Title>
+                <img
+                  src={`img/logo-${currentConsumer.id}.png`}
+                  className="modal__logo"
+                  alt="Company Logo"
+                />
+
+                {currentConsumer.name}
+              </Modal.Title>
             )}
           </Modal.Header>
 
