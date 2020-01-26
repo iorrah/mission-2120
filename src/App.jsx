@@ -206,10 +206,20 @@ class App extends React.Component {
             <Modal.Footer>
               <Button variant="light" onClick={this.handleCloseModal}>
                 Close
+                <img
+                  src="img/icon-16.png"
+                  className="modal__close-icon"
+                  alt="Close"
+                />
               </Button>
 
               <Button variant="primary" onClick={this.handleSaveChanges}>
                 Save Changes
+                <img
+                  src="img/icon-15.png"
+                  className="modal__check-icon"
+                  alt="Check mark"
+                />
               </Button>
             </Modal.Footer>
           </Modal>
