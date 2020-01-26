@@ -23,6 +23,17 @@
   margin: 0 0 2rem;
 }
 
+.main__title {
+  font-size: 2rem;
+  line-height: normal;
+  font-weight: 500;
+}
+
+.main__counter {
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+}
+
 .main__button-light {
   margin: 0 0.8rem 0 0;
 }
@@ -62,6 +73,8 @@
 
 .main__table-row > td {
   padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  line-height: normal;
 }
 
 .main__row-logo {
@@ -70,4 +83,5 @@
 
 .main__row-action {
   width: 1.6rem;
+  float: right;
 }
