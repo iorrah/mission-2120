@@ -69,7 +69,15 @@ const App = function() {
                     </td>
 
                     <td>{consumer.id}</td>
-                    <td>Company Logo</td>
+
+                    <td>
+                      <img
+                        src={`img/logo-${consumer.id}.png`}
+                        className="main__row-logo"
+                        alt="Company Logo"
+                      />
+                    </td>
+
                     <td>{consumer.name}</td>
                     <td>{consumer.budget}</td>
                     <td>{consumer.budget_spent}</td>
