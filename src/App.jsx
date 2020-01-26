@@ -10,7 +10,11 @@ import Main from "./containers/Main";
 const App = () => {
   return (
     <div className="App">
-      <ToastContainer autoClose={2000} closeButton={<CloseToaster />} />
+      <ToastContainer
+        autoClose={2000}
+        hideProgressBar={true}
+        closeButton={<CloseToaster />}
+      />
       <Header />
 
       <main className="main">
