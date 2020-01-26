@@ -8,7 +8,7 @@ import FormControl from "react-bootstrap/FormControl";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import consumersRaw from "./api/consumers.js";
-import { date, currency } from "./utils/formatter.js";
+import { date, currency, sortObjectArray } from "./utils/formatter.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -55,7 +55,7 @@ class App extends React.Component {
     this.setState({
       modalOpen: false,
       currentConsumer: {},
-      consumers: [...updatedConsumers, currentConsumer]
+      consumers: sortObjectArray([...updatedConsumers, currentConsumer])
     });
   }
 
@@ -128,7 +128,7 @@ class App extends React.Component {
                 </thead>
 
                 <tbody className="main__table-body">
-                  {consumers.map(consumer => (
+                  {sortObjectArray(consumers).map(consumer => (
                     <tr
                       className="main__table-row"
                       key={`consumer-${consumer.id}`}

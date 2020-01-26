@@ -26,4 +26,8 @@ const currency = number => {
     .join(" ");
 };
 
-export { pad, date, currency };
+const sortObjectArray = (array, field = "id") => {
+  return array.sort((a, b) => a[field] - b[field]);
+};
+
+export { pad, date, currency, sortObjectArray };
