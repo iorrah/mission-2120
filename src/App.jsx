@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import consumers from "./api/consumers.js";
+import { date } from "./utils/formatter.js";
 
 const App = function() {
   return (
@@ -81,7 +82,7 @@ const App = function() {
                     <td>{consumer.name}</td>
                     <td>{consumer.budget}</td>
                     <td>{consumer.budget_spent}</td>
-                    <td>{consumer.date_of_first_purchase}</td>
+                    <td>{date(consumer.date_of_first_purchase)}</td>
 
                     <td>
                       <img
