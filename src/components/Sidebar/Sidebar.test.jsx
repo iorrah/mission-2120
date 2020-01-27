@@ -4,15 +4,15 @@ import { shallow, mount } from "enzyme";
 import Sidebar from "./Sidebar";
 
 describe("Sidebar", () => {
-  test("should shallow correctly", () => {
+  it("should shallow correctly", () => {
     expect(shallow(<Sidebar />)).toMatchSnapshot();
   });
 
-  test("should mount correctly", () => {
+  it("should mount correctly", () => {
     expect(mount(<Sidebar />)).toMatchSnapshot();
   });
 
-  test("should render correctly", () => {
+  it("should render correctly", () => {
     expect(render(<Sidebar />)).toMatchSnapshot();
   });
 

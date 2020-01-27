@@ -4,15 +4,15 @@ import { shallow, mount } from "enzyme";
 import Header from "./Header";
 
 describe("Header", () => {
-  test("should shallow correctly", () => {
+  it("should shallow correctly", () => {
     expect(shallow(<Header />)).toMatchSnapshot();
   });
 
-  test("should mount correctly", () => {
+  it("should mount correctly", () => {
     expect(mount(<Header />)).toMatchSnapshot();
   });
 
-  test("should render correctly", () => {
+  it("should render correctly", () => {
     expect(render(<Header />)).toMatchSnapshot();
   });
 
