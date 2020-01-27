@@ -2,6 +2,19 @@
 
 # Mission 2120
 
+Mission 2120 is a project built as part of the hiring process at [Billi](https://www.billie.io). The project brief required that I developed a simple web app using [React.js](https://reactjs.org) where the user could see a list of the service consumers and edit their available budget.
+
+My proposal involves creating a [CRM](https://en.wikipedia.org/wiki/Customer_relationship_management) platform to aggregate and manipulate the service<>consumer relationship.
+
+To achieve this result, I started with the User Experience aspects of the interface, then moved into the User Interface details and lastly into Frontend Development. To gain time, I have made use of [Create React App](https://github.com/facebook/create-react-app) to quickly scaffold the project and [React Bootstrap](https://github.com/react-bootstrap/react-bootstrap) to not have to create all the vanilla Javascript needed for Modal where the consumer budget shows up.
+
+It was my intention to not use [Redux](https://github.com/reduxjs/redux) or [React Router](https://github.com/ReactTraining/react-router) given the fact that the project brief only requires one page and the state does not need to be persisted across multiple routes.
+
+- See the [Live Demo](https://iorrah.github.io/mission-2120/)
+- See the proposal on [Behance](https://www.behance.net/gallery/91316835/Billie-Code-Assessment)
+
+## The Challenge
+
 Humans finally met extraterrestrial civilizations. Spaceships are now able to travel to galaxies far away. Isaac Asimov can finally be proud of us.
 
 It turned out that the Martian B2B market looks pretty attractive. Martian entrepreneurs are hard workers. SMEs on Mars produce goods and provide services. But… they need liquidity, insurance, and collections. Same problems as on Earth.
