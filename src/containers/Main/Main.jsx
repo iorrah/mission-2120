@@ -6,8 +6,9 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { toast } from "react-toastify";
 
 import BudgetInput from "../../components/BudgetInput";
+import TableRow from "../../components/TableRow";
 import consumersRaw from "../../api/consumers.js";
-import { date, currency, sortObjectArray } from "../../utils/formatter.js";
+import { currency, sortObjectArray } from "../../utils/formatter.js";
 
 class Main extends React.Component {
   constructor(props) {
@@ -192,42 +193,16 @@ class Main extends React.Component {
 
             <tbody className="main__table-body">
               {sortObjectArray(consumers).map(consumer => (
-                <tr
-                  className="main__table-row"
+                <TableRow
                   key={`consumer-${consumer.id}`}
-                  onClick={() => this.handleOpenModal(consumer)}
-                >
-                  <td>
-                    <input
-                      type="checkbox"
-                      className="main__checkbox"
-                      onClick={this.handleClickCheckbox}
-                    />
-                  </td>
-
-                  <td>{consumer.id}</td>
-
-                  <td>
-                    <img
-                      src={`img/logo-${consumer.id}.png`}
-                      className="main__row-logo"
-                      alt="Company Logo"
-                    />
-                  </td>
-
-                  <td>{consumer.name}</td>
-                  <td>€{currency(consumer.budget)}</td>
-                  <td>€{currency(consumer.budget_spent)}</td>
-                  <td>{date(consumer.date_of_first_purchase)}</td>
-
-                  <td>
-                    <img
-                      src="img/icon-8.png"
-                      className="main__row-action"
-                      alt="Further actions"
-                    />
-                  </td>
-                </tr>
+                  handleClick={() => this.handleOpenModal(consumer)}
+                  handleClickCheckbox={this.handleClickCheckbox}
+                  consumerId={consumer.id}
+                  consumerName={consumer.name}
+                  consumerBudget={consumer.budget}
+                  consumerBudgetSpent={consumer.budget_spent}
+                  consumerDateFirstPurchase={consumer.date_of_first_purchase}
+                />
               ))}
             </tbody>
           </table>
