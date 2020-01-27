@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TableRow should mount correctly 1`] = `ReactWrapper {}`;
+
+exports[`TableRow should render correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <tr
+        class="main__table-row"
+      >
+        <td>
+          <input
+            class="main__checkbox"
+            type="checkbox"
+          />
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          <img
+            alt="Company Logo"
+            class="main__row-logo"
+            src="img/logo-1.png"
+          />
+        </td>
+        <td>
+          Apple
+        </td>
+        <td>
+          €
+          123.456,79
+        </td>
+        <td>
+          €
+          987,65
+        </td>
+        <td>
+          18/03/2120
+        </td>
+        <td>
+          <img
+            alt="Further actions"
+            class="main__row-action"
+            src="img/icon-8.png"
+          />
+        </td>
+      </tr>
+    </div>
+  </body>,
+  "container": <div>
+    <tr
+      class="main__table-row"
+    >
+      <td>
+        <input
+          class="main__checkbox"
+          type="checkbox"
+        />
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        <img
+          alt="Company Logo"
+          class="main__row-logo"
+          src="img/logo-1.png"
+        />
+      </td>
+      <td>
+        Apple
+      </td>
+      <td>
+        €
+        123.456,79
+      </td>
+      <td>
+        €
+        987,65
+      </td>
+      <td>
+        18/03/2120
+      </td>
+      <td>
+        <img
+          alt="Further actions"
+          class="main__row-action"
+          src="img/icon-8.png"
+        />
+      </td>
+    </tr>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`TableRow should shallow correctly 1`] = `ShallowWrapper {}`;
