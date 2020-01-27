@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mission-2120/static/css/main.2cc63c88.chunk.css",
+    "main.js": "/mission-2120/static/js/main.0e8aba89.chunk.js",
+    "main.js.map": "/mission-2120/static/js/main.0e8aba89.chunk.js.map",
+    "runtime-main.js": "/mission-2120/static/js/runtime-main.97848eaa.js",
+    "runtime-main.js.map": "/mission-2120/static/js/runtime-main.97848eaa.js.map",
+    "static/css/2.82caf9b5.chunk.css": "/mission-2120/static/css/2.82caf9b5.chunk.css",
+    "static/js/2.14ff5590.chunk.js": "/mission-2120/static/js/2.14ff5590.chunk.js",
+    "static/js/2.14ff5590.chunk.js.map": "/mission-2120/static/js/2.14ff5590.chunk.js.map",
+    "index.html": "/mission-2120/index.html",
+    "precache-manifest.2a7951d33ad80b9e5a01f417c975f127.js": "/mission-2120/precache-manifest.2a7951d33ad80b9e5a01f417c975f127.js",
+    "service-worker.js": "/mission-2120/service-worker.js",
+    "static/css/2.82caf9b5.chunk.css.map": "/mission-2120/static/css/2.82caf9b5.chunk.css.map",
+    "static/css/main.2cc63c88.chunk.css.map": "/mission-2120/static/css/main.2cc63c88.chunk.css.map",
+    "static/js/2.14ff5590.chunk.js.LICENSE": "/mission-2120/static/js/2.14ff5590.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.97848eaa.js",
+    "static/css/2.82caf9b5.chunk.css",
+    "static/js/2.14ff5590.chunk.js",
+    "static/css/main.2cc63c88.chunk.css",
+    "static/js/main.0e8aba89.chunk.js"
+  ]
+}
