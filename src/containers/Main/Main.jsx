@@ -27,6 +27,7 @@ class Main extends React.Component {
     this.handleSaveChanges = this.handleSaveChanges.bind(this);
     this.updateConsumerBudget = this.updateConsumerBudget.bind(this);
     this.setModalErrorMessage = this.setModalErrorMessage.bind(this);
+    this.getConsumers = this.getConsumers.bind(this);
   }
 
   handleOpenModal(consumer) {
@@ -101,7 +102,7 @@ class Main extends React.Component {
   }
 
   updateConsumerBudget(consumer) {
-    const { consumers } = this.state;
+    const consumers = this.getConsumers();
     const untouchedConsumers = consumers.filter(i => i.id !== consumer.id);
 
     this.setState({
@@ -127,6 +128,10 @@ class Main extends React.Component {
 
   handleSuccess() {
     toast.success("Budged updated successfully");
+  }
+
+  getConsumers() {
+    return this.state.consumers;
   }
 
   render() {
