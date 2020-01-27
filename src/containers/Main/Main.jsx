@@ -5,7 +5,7 @@ import Modal from "react-bootstrap/Modal";
 import InputGroup from "react-bootstrap/InputGroup";
 import { toast } from "react-toastify";
 
-import CleaveBudget from "../../components/CleaveBudget";
+import BudgetInput from "../../components/BudgetInput";
 import consumersRaw from "../../api/consumers.js";
 import { date, currency, sortObjectArray } from "../../utils/formatter.js";
 
@@ -265,7 +265,7 @@ class Main extends React.Component {
                       <InputGroup.Text id="basic-addon1">€</InputGroup.Text>
                     </InputGroup.Prepend>
 
-                    <CleaveBudget
+                    <BudgetInput
                       placeholder={currentConsumer.budget_untouched}
                       value={currentConsumer.budget}
                       onChange={this.handleInputChange}

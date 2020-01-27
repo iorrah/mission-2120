@@ -2,7 +2,7 @@ import React from "react";
 import FormControl from "react-bootstrap/FormControl";
 import { currency } from "../../utils/formatter.js";
 
-class CleaveBudget extends React.Component {
+class BudgetInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = { untouched: true };
@@ -53,4 +53,4 @@ class CleaveBudget extends React.Component {
   }
 }
 
-export default CleaveBudget;
+export default BudgetInput;
