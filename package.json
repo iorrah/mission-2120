@@ -1,25 +1,28 @@
 {
   "name": "mission-2120",
+  "homepage": "https://iorrah.github.io/mission-2120",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "accounting": "^0.4.1",
-    "bootstrap": "^4.4.1",
-    "node-sass": "^4.13.1",
-    "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
-    "react-dom": "^16.12.0",
+    "@testing-library/jest-dom": "4.2.4",
+    "@testing-library/react": "9.3.2",
+    "@testing-library/user-event": "7.1.2",
+    "accounting": "0.4.1",
+    "bootstrap": "4.4.1",
+    "node-sass": "4.13.1",
+    "react": "16.12.0",
+    "react-bootstrap": "1.0.0-beta.16",
+    "react-dom": "16.12.0",
     "react-scripts": "3.3.0",
-    "react-toastify": "^5.5.0"
+    "react-toastify": "5.5.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,8 +40,9 @@
     ]
   },
   "devDependencies": {
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2",
-    "react-test-renderer": "^16.12.0"
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "gh-pages": "2.2.0",
+    "react-test-renderer": "16.12.0"
   }
 }
