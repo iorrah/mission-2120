@@ -31,7 +31,10 @@ class Main extends React.Component {
   handleOpenModal(consumer) {
     this.setState({
       modalOpen: true,
-      currentConsumer: consumer
+      currentConsumer: {
+        ...consumer,
+        budget_untouched: currency(consumer.budget)
+      }
     });
   }
 
@@ -43,11 +46,13 @@ class Main extends React.Component {
     });
   }
 
-  handleInputChange(event) {
-    const budget = event.target.value;
-
+  handleInputChange(value, rawValue) {
     this.setState({
-      currentConsumer: { ...this.state.currentConsumer, budget }
+      currentConsumer: {
+        ...this.state.currentConsumer,
+        budget: value,
+        budget_raw: rawValue
+      }
     });
   }
 
@@ -75,18 +80,15 @@ class Main extends React.Component {
   }
 
   isSameBudget(consumer) {
-    const { consumers } = this.state;
-    const untouchedConsumer = consumers.find(i => i.id === consumer.id);
-    return consumer.budget === untouchedConsumer.budget;
+    return consumer.budget_raw === consumer.budget_untouched;
   }
 
   isValidBudget(consumer) {
-    debugger;
-    return consumer && consumer.budget && !isNaN(consumer.budget);
+    return consumer && consumer.budget_raw && !isNaN(consumer.budget_raw);
   }
 
   isMoreThanSpent(consumer) {
-    return consumer.budget >= consumer.budget_spent;
+    return consumer.budget_raw >= parseFloat(consumer.budget_spent.toFixed(2));
   }
 
   updateConsumerBudget(consumer) {
@@ -96,7 +98,10 @@ class Main extends React.Component {
     this.setState({
       modalOpen: false,
       consumer: {},
-      consumers: sortObjectArray([...untouchedConsumers, consumer])
+      consumers: sortObjectArray([
+        ...untouchedConsumers,
+        { ...consumer, budget: consumer.budget_raw }
+      ])
     });
 
     this.handleSuccess();
@@ -163,10 +168,10 @@ class Main extends React.Component {
                 <th className="main__table-header-id">ID</th>
                 <th className="main__table-header-logo">COMPANY</th>
                 <th className="main__table-header-name">NAME</th>
-                <th className="main__table-header-budget">BUDGET €</th>
+                <th className="main__table-header-budget">BUDGET</th>
 
                 <th className="main__table-header-budget-spent">
-                  BUDGET SPENT €
+                  BUDGET SPENT
                 </th>
 
                 <th className="main__table-header-date">
@@ -203,8 +208,8 @@ class Main extends React.Component {
                   </td>
 
                   <td>{consumer.name}</td>
-                  <td>{currency(consumer.budget)}</td>
-                  <td>{currency(consumer.budget_spent)}</td>
+                  <td>€{currency(consumer.budget)}</td>
+                  <td>€{currency(consumer.budget_spent)}</td>
                   <td>{date(consumer.date_of_first_purchase)}</td>
 
                   <td>
@@ -253,10 +258,12 @@ class Main extends React.Component {
                     </InputGroup.Prepend>
 
                     <CleaveBudget
-                      placeholder="e.g. 528 489,31"
+                      placeholder={currentConsumer.budget_untouched}
                       value={currentConsumer.budget}
                       onChange={this.handleInputChange}
                       className="form-control"
+                      arialLabel="Consumer budget"
+                      arialDescribedBy=""
                     />
                   </InputGroup>
                 </div>

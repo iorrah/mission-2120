@@ -1,3 +1,5 @@
+import accounting from "accounting";
+
 const pad = (number, width = 2, filling = "0") => {
   const numberStr = `${number}`;
 
@@ -20,10 +22,7 @@ const date = date => {
 };
 
 const currency = number => {
-  return number
-    .toLocaleString("de")
-    .split(".")
-    .join(" ");
+  return accounting.formatMoney(number, "", 2, ".", ",");
 };
 
 const sortObjectArray = (array, field = "id") => {
