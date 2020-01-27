@@ -1,4 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Mission 2120
+
+Humans finally met extraterrestrial civilizations. Spaceships are now able to travel to galaxies far away. Isaac Asimov can finally be proud of us.
+
+It turned out that the Martian B2B market looks pretty attractive. Martian entrepreneurs are hard workers. SMEs on Mars produce goods and provide services. But… they need liquidity, insurance, and collections. Same problems as on Earth.
+
+## Research
+
+Think about problems our Martian business may face in 2120: Oxygen supply, Marketing,
+Vegetables for the Team, Accounting...whatever.
+Take your time. Use Google. Do a research about the topic. Write down all the problems you
+came up with, and potential solutions to each of them.
+
+## Problem solving
+
+Create a simple (React) SPA that displays a list of Martian consumers of our service.
+
+The list should display the following:
+
+- Company Name
+- Date of a first purchase
+- Total budget
+- Budget spent
+- Budget left
+
+The budgets must be displayed in the german format, with 2 decimals.
+
+The companies should be fetched from an endpoint, that will provide the data in this format (add as many items as needed):
+
+```
+[{
+ id: 1,
+ name: “Martian Firma”,
+ budget: 10000.0000,
+ budget_spent: 4500.0000,
+ date_of_first_purchase: “2119-07-07”
+}, {
+ id: 2,
+ name: “Solar Firma”,
+ budget: 1123.2200,
+ budget_spent: 451.3754,
+ date_of_first_purchase: “2120-01-14”
+}]
+```
+
+The endpoint itself can be mocked.
+
+Clicking on the company row should open a modal with the company’s name and one input field:
+
+- The field is pre-filled with the total budget for the that company
+- The user should be able to edit the value and submit
+- If the value is not valid, no submission should be possible
+- If the value is valid, a confirmation should be displayed before the user can go back to the list of companies
+- The new value should appear in the list as soon as it is updated
+
+_Bonus_: The value must not be less than the budget spent.
+
+Cover the modal component with unit-tests.
+
+Notes:
+
+- On the frontend side, all the numeric values must have two decimals, and be displayed in the german locale
+- It is up to you to use create-react-app;
+- It is possible to use redux
+- It is up to you to use any CSS framework, or no framework at all
 
 ## Available Scripts
 
