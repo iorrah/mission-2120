@@ -67,14 +67,10 @@ class Main extends React.Component {
           this.setModalErrorMessage("");
           this.updateConsumerBudget(consumer);
         } else {
-          this.setModalErrorMessage(
-            `Ops... the budget must be higher than the spent budget (€${currency(
-              consumer.budget_spent
-            )})`
-          );
+          this.setMoreThanSpentError(consumer.budget_spent);
         }
       } else {
-        this.setModalErrorMessage("Ops... the budget must be a valid number");
+        this.setInvalidBudgetError();
       }
     }
   }
@@ -89,6 +85,18 @@ class Main extends React.Component {
 
   isMoreThanSpent(consumer) {
     return consumer.budget_raw >= parseFloat(consumer.budget_spent.toFixed(2));
+  }
+
+  setMoreThanSpentError(spent) {
+    this.setModalErrorMessage(
+      `Ops... the budget must be higher than the spent budget (€${currency(
+        spent
+      )})`
+    );
+  }
+
+  setInvalidBudgetError() {
+    this.setModalErrorMessage("Ops... the budget must be a valid number");
   }
 
   updateConsumerBudget(consumer) {
