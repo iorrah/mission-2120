@@ -1,3 +1,5 @@
+![Project Cover](public/img/project-cover.png)
+
 # Mission 2120
 
 Humans finally met extraterrestrial civilizations. Spaceships are now able to travel to galaxies far away. Isaac Asimov can finally be proud of us.
